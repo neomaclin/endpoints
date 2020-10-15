@@ -1,3 +1,5 @@
+organization := "com.quasigroup.inc"
+
 name := "endpoints"
 
 version := "0.1"

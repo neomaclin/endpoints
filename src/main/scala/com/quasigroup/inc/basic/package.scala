@@ -1,7 +1,6 @@
-package com.quasigroup
+package com.quasigroup.inc
 
 import io.circe._
-import sttp.tapir.Codec._
 import sttp.tapir._
 import sttp.tapir.json.circe._
 import io.circe.generic.auto._
@@ -28,42 +27,40 @@ package object basic {
   val origins:EndpointInput[(Int, Option[Int])] =
     query[Int]("from") and query[Option[Int]]("with")
 
-  val pagination: EndpointInput[(Int, Int)] =
-    query[Int]("pageNo") and query[Int]("pageSize")
+  def pagination(pageNumber:String, pageSize:String): EndpointInput[(Int, Int)] =
+    query[Int](name = pageNumber) and query[Int]( name = pageSize)
 
   object Heartbeat {
-    val ping: Endpoint[Unit, Unit, String, Nothing] =
-      endpoint.get
-        .in("/ping")
-        .out(stringBody).out(statusCode(StatusCode.Ok))
+    def ping(path: String): Endpoint[Unit, Unit, Unit, Nothing] =
+      endpoint.in(path).out(statusCode(StatusCode.Ok))
   }
 
   object Entrance {
 
-    def indexJson[T: JsonCodec: Encoder: Decoder]: Endpoint[Unit, Unit, T, Nothing] =
+    def indexJson[T:Encoder: Decoder:Schema:Validator]: Endpoint[Unit, Unit, T, Nothing] =
       endpoint.get
         .in("/index")
         .out(jsonBody[T]).out(statusCode(StatusCode.Ok))
 
-    def indexHtml[T: XmlCodec]: Endpoint[Unit, Unit, T, Nothing] =
+    val indexHtml: Endpoint[Unit, Unit, String, Nothing] =
       endpoint.get
         .in("/index.html")
-        .out(xmlBody[T]).out(statusCode(StatusCode.Ok))
+        .out(htmlBodyUtf8).out(statusCode(StatusCode.Ok))
 
   }
 
   object Authentication{
 
-    def signIn[T: JsonCodec: Encoder: Decoder, R]: Endpoint[(Int, Option[Int], Option[T], Option[T]), Unit, R, Nothing] =
+    def signIn[T:Encoder: Decoder:Schema:Validator, R:Encoder: Decoder:Schema:Validator](signInPath:String): Endpoint[(Int, Option[Int], Option[T]), Unit, R, Nothing] =
       endpoint.post
-        .in("/sign_in")
+        .in(signInPath)
         .in(origins)
-        .in(jsonBody[Option[T]] and formBody[Option[T]])
+        .in(jsonBody[Option[T]])
         .out(jsonBody[R]).out(statusCode(StatusCode.Ok))
 
-    def signOut[T]: Endpoint[Unit, Unit, Unit, Nothing] = endpoint
+    def signOut[T](signOutPath:String): Endpoint[Unit, Unit, Unit, Nothing] = endpoint
       .delete
-      .in("sign_out")
+      .in(signOutPath)
       .out(statusCode(StatusCode.Ok))
   }
 
