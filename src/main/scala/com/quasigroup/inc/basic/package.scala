@@ -4,7 +4,8 @@ import io.circe._
 import sttp.tapir._
 import sttp.tapir.json.circe._
 import io.circe.generic.auto._
-import sttp.model.StatusCode
+import shapeless.HList
+import sttp.model.{QueryParams, StatusCode}
 
 
 package object basic {
@@ -39,12 +40,12 @@ package object basic {
 
     def indexJson[T:Encoder: Decoder:Schema:Validator]: Endpoint[Unit, Unit, T, Nothing] =
       endpoint.get
-        .in("/index")
+        .in("index")
         .out(jsonBody[T]).out(statusCode(StatusCode.Ok))
 
     val indexHtml: Endpoint[Unit, Unit, String, Nothing] =
       endpoint.get
-        .in("/index.html")
+        .in("index.html")
         .out(htmlBodyUtf8).out(statusCode(StatusCode.Ok))
 
   }
@@ -58,10 +59,38 @@ package object basic {
         .in(jsonBody[Option[T]])
         .out(jsonBody[R]).out(statusCode(StatusCode.Ok))
 
-    def signOut[T](signOutPath:String): Endpoint[Unit, Unit, Unit, Nothing] = endpoint
+    def signOut[R:Encoder: Decoder:Schema:Validator](signOutPath:String): Endpoint[Unit, Unit, R, Nothing] = endpoint
       .delete
       .in(signOutPath)
+      .out(jsonBody[R])
       .out(statusCode(StatusCode.Ok))
   }
 
+  object Content{
+
+    def post[T:Encoder: Decoder:Schema:Validator](path:String): Endpoint[T, Unit, Unit, Nothing] =
+      endpoint.post.in(path).in(jsonBody[T])
+        .out(statusCode(StatusCode.Created))
+        .errorOut(statusCode(StatusCode.Conflict))
+
+    def getCollectionOf[T:Encoder: Decoder:Schema:Validator](path: String): Endpoint[Unit, Unit, List[T], Nothing] =
+      endpoint.get.in(path)
+        .out(jsonBody[List[T]]).out(statusCode(StatusCode.Ok))
+        .errorOut(statusCode(StatusCode.NotFound))
+
+    def getCollectionByParameters[R:Encoder: Decoder:Schema:Validator](path: String): Endpoint[QueryParams, Unit, List[R], Nothing] =
+      endpoint.get.in(path).in(queryParams)
+        .out(jsonBody[List[R]]).out(statusCode(StatusCode.Ok))
+        .errorOut(statusCode(StatusCode.NotFound))
+
+    def getCollectionByBody[Q:Encoder: Decoder:Schema:Validator, R:Encoder: Decoder:Schema:Validator](path: String): Endpoint[Q, Unit, List[R], Nothing] =
+      endpoint.get.in(path).in(jsonBody[Q])
+        .out(jsonBody[List[R]]).out(statusCode(StatusCode.Ok))
+        .errorOut(statusCode(StatusCode.NotFound))
+
+    def update[T:Encoder: Decoder:Schema:Validator](path:String): Endpoint[T, Unit, Unit, Nothing] =
+      endpoint.put.in(path).in(jsonBody[T])
+        .out(statusCode(StatusCode.Accepted))
+        .errorOut(statusCode(StatusCode.Conflict))
+  }
 }

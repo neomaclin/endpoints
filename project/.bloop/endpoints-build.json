@@ -19,12 +19,16 @@
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\sbt\\1.4.0\\sbt-1.4.0.jar",
             "C:\\Users\\lin_w\\.sbt\\boot\\scala-2.12.12\\lib\\scala-library.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\ch\\epfl\\scala\\sbt-bloop_2.12_1.0\\1.4.4-13-408f4d80\\sbt-bloop-1.4.4-13-408f4d80.jar",
+            "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-structure-extractor\\scala_2.12\\sbt_1.0\\2018.2.1+4-88400d3f\\jars\\sbt-structure-extractor.jar",
+            "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-shell\\scala_2.12\\sbt_1.0\\2018.3\\jars\\sbt-idea-shell.jar",
+            "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-compiler-indices\\scala_2.12\\sbt_1.0\\0.1.3\\jars\\sbt-idea-compiler-indices.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\main_2.12\\1.4.0\\main_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\io_2.12\\1.4.0\\io_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna\\5.5.0\\jna-5.5.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna-platform\\5.5.0\\jna-platform-5.5.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\com\\google\\code\\gson\\gson\\2.7\\gson-2.7.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\com\\google\\code\\findbugs\\jsr305\\3.0.2\\jsr305-3.0.2.jar",
+            "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\io\\github\\sugakandrey\\scala-compiler-indices-protocol_2.12\\0.1.1\\scala-compiler-indices-protocol_2.12-0.1.1.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\logic_2.12\\1.4.0\\logic_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\actions_2.12\\1.4.0\\actions_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\main-settings_2.12\\1.4.0\\main-settings_2.12-1.4.0.jar",
@@ -46,6 +50,7 @@
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\compiler-interface\\1.4.0\\compiler-interface-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\zinc-compile_2.12\\1.4.0\\zinc-compile_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\com\\swoval\\file-tree-views\\2.1.4\\file-tree-views-2.1.4.jar",
+            "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\io\\spray\\spray-json_2.12\\1.3.4\\spray-json_2.12-1.3.4.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\util-relation_2.12\\1.4.0\\util-relation_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\completion_2.12\\1.4.0\\completion_2.12-1.4.0.jar",
             "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\task-system_2.12\\1.4.0\\task-system_2.12-1.4.0.jar",
@@ -146,8 +151,8 @@
                 "import _root_.sbt._",
                 "import _root_.sbt.Keys._",
                 "import _root_.sbt.nio.Keys._",
-                "import _root_.sbt.ScriptedPlugin.autoImport._, _root_.sbt.plugins.MiniDependencyTreePlugin.autoImport._, _root_.bloop.integrations.sbt.BloopPlugin.autoImport._",
-                "import _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.ScriptedPlugin, _root_.sbt.plugins.SbtPlugin, _root_.sbt.plugins.SemanticdbPlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.sbt.plugins.MiniDependencyTreePlugin, _root_.bloop.integrations.sbt.BloopPlugin"
+                "import _root_.sbt.ScriptedPlugin.autoImport._, _root_.sbt.plugins.MiniDependencyTreePlugin.autoImport._, _root_.bloop.integrations.sbt.BloopPlugin.autoImport._, _root_.org.jetbrains.sbt.IdeaShellPlugin.autoImport._, _root_.org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin.autoImport._",
+                "import _root_.sbt.plugins.IvyPlugin, _root_.sbt.plugins.JvmPlugin, _root_.sbt.plugins.CorePlugin, _root_.sbt.ScriptedPlugin, _root_.sbt.plugins.SbtPlugin, _root_.sbt.plugins.SemanticdbPlugin, _root_.sbt.plugins.JUnitXmlReportPlugin, _root_.sbt.plugins.Giter8TemplatePlugin, _root_.sbt.plugins.MiniDependencyTreePlugin, _root_.bloop.integrations.sbt.BloopPlugin, _root_.org.jetbrains.sbt.StructurePlugin, _root_.org.jetbrains.sbt.IdeaShellPlugin, _root_.org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin"
             ]
         },
         "test": {
@@ -192,7 +197,7 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "C:\\Users\\lin_w\\scoop\\apps\\adopt8-hotspot\\current\\jre",
+                "home": "C:\\Users\\lin_w\\.jdks\\adopt-openjdk-1.8.0_265\\jre",
                 "options": [
                     "-Duser.dir=D:\\User\\neo\\Projects\\endpoints\\project"
                 ]
@@ -212,6 +217,90 @@
                         {
                             "name": "sbt-bloop",
                             "path": "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\ch\\epfl\\scala\\sbt-bloop_2.12_1.0\\1.4.4-13-408f4d80\\sbt-bloop-1.4.4-13-408f4d80.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains",
+                    "name": "sbt-structure-extractor",
+                    "version": "2018.2.1+4-88400d3f",
+                    "configurations": "compile",
+                    "artifacts": [
+                        {
+                            "name": "sbt-structure-extractor",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "683a91e93468729f9846e557743bea49"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-structure-extractor\\scala_2.12\\sbt_1.0\\2018.2.1+4-88400d3f\\jars\\sbt-structure-extractor.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains",
+                    "name": "sbt-idea-shell",
+                    "version": "2018.3",
+                    "configurations": "compile",
+                    "artifacts": [
+                        {
+                            "name": "sbt-idea-shell",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "c64b2eda1becf7a84e5a842c032324c5"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-shell\\scala_2.12\\sbt_1.0\\2018.3\\jars\\sbt-idea-shell.jar"
+                        },
+                        {
+                            "name": "sbt-idea-shell",
+                            "classifier": "sources",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "b138166cb370d582c7bd9c1494fd93eb"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-shell\\scala_2.12\\sbt_1.0\\2018.3\\srcs\\sbt-idea-shell-sources.jar"
+                        },
+                        {
+                            "name": "sbt-idea-shell",
+                            "classifier": "javadoc",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "d41d8cd98f00b204e9800998ecf8427e"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-shell\\scala_2.12\\sbt_1.0\\2018.3\\docs\\sbt-idea-shell-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains",
+                    "name": "sbt-idea-compiler-indices",
+                    "version": "0.1.3",
+                    "configurations": "compile",
+                    "artifacts": [
+                        {
+                            "name": "sbt-idea-compiler-indices",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "5d189d6ab1526926d758556bad1ef1c7"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-compiler-indices\\scala_2.12\\sbt_1.0\\0.1.3\\jars\\sbt-idea-compiler-indices.jar"
+                        },
+                        {
+                            "name": "sbt-idea-compiler-indices",
+                            "classifier": "sources",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "75daacaaac25e22e9c87a11a70889884"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-compiler-indices\\scala_2.12\\sbt_1.0\\0.1.3\\srcs\\sbt-idea-compiler-indices-sources.jar"
+                        },
+                        {
+                            "name": "sbt-idea-compiler-indices",
+                            "classifier": "javadoc",
+                            "checksum": {
+                                "type": "md5",
+                                "digest": "d41d8cd98f00b204e9800998ecf8427e"
+                            },
+                            "path": "C:\\Users\\lin_w\\scoop\\apps\\jetbrains-toolbox\\current\\apps\\IDEA-C\\ch-0\\202.7660.26.plugins\\Scala\\repo\\org.jetbrains\\sbt-idea-compiler-indices\\scala_2.12\\sbt_1.0\\0.1.3\\docs\\sbt-idea-compiler-indices-javadoc.jar"
                         }
                     ]
                 },
@@ -240,14 +329,14 @@
                     ]
                 },
                 {
-                    "organization": "org.scala-sbt",
-                    "name": "sbt",
-                    "version": "1.4.0",
+                    "organization": "io.github.sugakandrey",
+                    "name": "scala-compiler-indices-protocol_2.12",
+                    "version": "0.1.1",
                     "configurations": "default",
                     "artifacts": [
                         {
-                            "name": "sbt",
-                            "path": "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\sbt\\1.4.0\\sbt-1.4.0.jar"
+                            "name": "scala-compiler-indices-protocol_2.12",
+                            "path": "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\io\\github\\sugakandrey\\scala-compiler-indices-protocol_2.12\\0.1.1\\scala-compiler-indices-protocol_2.12-0.1.1.jar"
                         }
                     ]
                 },
@@ -260,6 +349,30 @@
                         {
                             "name": "scala-library",
                             "path": "C:\\Users\\lin_w\\.sbt\\boot\\scala-2.12.12\\lib\\scala-library.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.spray",
+                    "name": "spray-json_2.12",
+                    "version": "1.3.4",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "spray-json_2.12",
+                            "path": "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\io\\spray\\spray-json_2.12\\1.3.4\\spray-json_2.12-1.3.4.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-sbt",
+                    "name": "sbt",
+                    "version": "1.4.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "sbt",
+                            "path": "C:\\Users\\lin_w\\AppData\\Local\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\sbt\\1.4.0\\sbt-1.4.0.jar"
                         }
                     ]
                 },
