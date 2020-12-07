@@ -4,25 +4,37 @@ name := "endpoints"
 
 version := "0.1"
 
-scalaVersion := "2.13.2"
+scalaVersion := "2.13.4"
+
 libraryDependencies ++= webStack ++ crypto ++ stackGlue
 
 lazy val webStack = circe ++ sttp ++ jwt
-lazy val stackGlue = enumlib
+lazy val stackGlue = enumlib ++ cats
 lazy val crypto = bc
+
+lazy val cats = {
+  Seq(
+    "org.typelevel" %% "kittens" % "2.2.1"
+  ) ++
+    Seq(
+      "org.typelevel" %% "cats-effect",
+      "org.typelevel" %% "cats-core",
+      "org.typelevel" %% "cats-free"
+    ).map(_ % "2.3.0")
+}
+
 
 lazy val bc = {
   // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15to18
   Seq("org.bouncycastle" % "bcprov-jdk15to18" % "1.66")
-
 }
 
 lazy val enumlib = {
   Seq(
     "com.beachape" %% "enumeratum",
     "com.beachape" %% "enumeratum-circe",
-    "com.beachape" %% "enumeratum-quill"
-  ).map(_ % "1.6.0")
+    "com.beachape" %% "enumeratum-cats",
+  ).map(_ % "1.6.1")
 }
 
 lazy val circe = {
@@ -34,7 +46,6 @@ lazy val circe = {
   ).map(_ % circeVersion)
 }
 
-
 lazy val sttp = {
   Seq(
     "com.softwaremill.sttp.tapir" %% "tapir-json-circe",
@@ -42,12 +53,15 @@ lazy val sttp = {
     "com.softwaremill.sttp.tapir" %% "tapir-zio",
     "com.softwaremill.sttp.tapir" %% "tapir-akka-http-server",
     "com.softwaremill.sttp.tapir" %% "tapir-sttp-client",
+    "com.softwaremill.sttp.tapir" %% "tapir-enumeratum",
     "com.softwaremill.sttp.tapir" %% "tapir-openapi-docs",
     "com.softwaremill.sttp.tapir" %% "tapir-openapi-circe-yaml"
-  ).map(_ % "0.16.15") ++
+  ).map(_ % "0.17.0-M9") ++
     Seq(
       "com.softwaremill.sttp.model" %% "core" % "1.1.4",
       "com.softwaremill.sttp.client" %% "core" % "2.2.5",
+      "com.softwaremill.sttp.shared" %% "core" % "1.0.0-RC7",
+      "com.softwaremill.sttp.shared" %% "akka" % "1.0.0-RC7",
     ) ++
     Seq(
       "com.softwaremill.sttp.client" %% "async-http-client-backend-zio",

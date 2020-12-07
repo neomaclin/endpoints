@@ -5,17 +5,19 @@ import io.circe.generic.auto._
 import sttp.model._
 import sttp.tapir._
 import sttp.tapir.json.circe._
-
+import sttp.capabilities.akka.AkkaStreams
+import sttp.tapir.generic.auto._
+import sttp.tapir.server.ServerDefaults.StatusCodes
 
 package object basic {
 
   sealed trait ErrorInfo
 
-  case class NotFound(what: String) extends ErrorInfo
+  final case class NotFound(what: String) extends ErrorInfo
 
-  case class Unauthorized(realm: String) extends ErrorInfo
+  final case class Unauthorized(realm: String) extends ErrorInfo
 
-  case class Unknown(code: Int, msg: String) extends ErrorInfo
+  final case class Unknown(code: Int, msg: String) extends ErrorInfo
 
   case object NoContent extends ErrorInfo
 
