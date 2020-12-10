@@ -2,7 +2,7 @@ organization := "com.quasigroup.inc"
 
 name := "endpoints"
 
-version := "0.1"
+version := "0.8"
 
 scalaVersion := "2.13.4"
 
@@ -55,8 +55,10 @@ lazy val sttp = {
     "com.softwaremill.sttp.tapir" %% "tapir-sttp-client",
     "com.softwaremill.sttp.tapir" %% "tapir-enumeratum",
     "com.softwaremill.sttp.tapir" %% "tapir-openapi-docs",
-    "com.softwaremill.sttp.tapir" %% "tapir-openapi-circe-yaml"
-  ).map(_ % "0.17.0-M9") ++
+    "com.softwaremill.sttp.tapir" %% "tapir-openapi-circe-yaml",
+    "com.softwaremill.sttp.tapir" %% "tapir-asyncapi-docs" ,
+    "com.softwaremill.sttp.tapir" %% "tapir-asyncapi-circe-yaml" ,
+  ).map(_ % "0.17.0-M10") ++
     Seq(
       "com.softwaremill.sttp.model" %% "core" % "1.1.4",
       "com.softwaremill.sttp.client" %% "core" % "2.2.5",
