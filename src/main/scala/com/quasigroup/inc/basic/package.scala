@@ -5,9 +5,7 @@ import io.circe.generic.auto._
 import sttp.model._
 import sttp.tapir._
 import sttp.tapir.json.circe._
-import sttp.capabilities.akka.AkkaStreams
 import sttp.tapir.generic.auto._
-import sttp.tapir.server.ServerDefaults.StatusCodes
 
 package object basic {
 
@@ -58,7 +56,7 @@ package object basic {
 
   object Authentication {
 
-    def signIn[T: Encoder : Decoder : Schema : Validator, R: Encoder : Decoder : Schema : Validator](signInPath: String): Endpoint[(Int, Option[Int], Option[T]), Unit, R, Nothing] =
+    def signIn[F: Encoder : Decoder : Schema : Validator, T: Encoder : Decoder : Schema : Validator, R: Encoder : Decoder : Schema : Validator](signInPath: String): Endpoint[(Int, Option[Int],Option[T]), Unit, R, Nothing] =
       endpoint.post
         .in(signInPath)
         .in(origins)
@@ -79,6 +77,16 @@ package object basic {
         .out(statusCode(StatusCode.Created))
         .errorOut(statusCode(StatusCode.Conflict))
 
+    def get[T: Encoder : Decoder : Schema : Validator](path: String): Endpoint[Unit, Unit, T, Nothing] =
+      endpoint.get.in(path)
+        .out(jsonBody[T]).out(statusCode(StatusCode.Ok))
+
+    def update[T: Encoder : Decoder : Schema : Validator](path: String): Endpoint[T, Unit, Unit, Nothing] =
+      endpoint.put.in(path).in(jsonBody[T])
+        .out(statusCode(StatusCode.Accepted))
+        .errorOut(statusCode(StatusCode.Conflict))
+        .errorOut(statusCode(StatusCode.NotFound))
+
     def getCollectionOf[T: Encoder : Decoder : Schema : Validator](path: String): Endpoint[Unit, Unit, List[T], Nothing] =
       endpoint.get.in(path)
         .out(jsonBody[List[T]]).out(statusCode(StatusCode.Ok))
@@ -94,10 +102,6 @@ package object basic {
         .out(jsonBody[List[R]]).out(statusCode(StatusCode.Ok))
         .errorOut(statusCode(StatusCode.NotFound))
 
-    def update[T: Encoder : Decoder : Schema : Validator](path: String): Endpoint[T, Unit, Unit, Nothing] =
-      endpoint.put.in(path).in(jsonBody[T])
-        .out(statusCode(StatusCode.Accepted))
-        .errorOut(statusCode(StatusCode.Conflict))
   }
 
   object Session{
